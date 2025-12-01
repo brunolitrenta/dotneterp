@@ -7,4 +7,5 @@ public interface IProductRepository
    Task<List<Product>> GetProducts(int? offset, int? limit);
    Task<Product> GetProductById(Guid id);
    Task<Product> CreateProduct(Product product);
+   Task<Product> UpdateProduct(Product product);
 }

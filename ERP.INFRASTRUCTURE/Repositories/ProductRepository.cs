@@ -26,4 +26,11 @@ public class ProductRepository(ErpDBContext _context) : IProductRepository
         await _context.SaveChangesAsync();
         return result.Entity;
     }
+
+    public async Task<Product> UpdateProduct(Product product)
+    {
+        var result = _context.Products.Update(product);
+        await _context.SaveChangesAsync();
+        return result.Entity;
+    }
 }

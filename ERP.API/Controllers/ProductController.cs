@@ -27,4 +27,10 @@ public class ProductController(IProductService _service) : ControllerBase
     {
         return Ok(await _service.CreateProduct(product));
     }
+
+    [HttpPut]
+    public async Task<ActionResult<Product>> UpdateProduct([FromBody] UpdateProductDTO product)
+    {
+        return Ok(await _service.UpdateProduct(product));
+    }
 }
