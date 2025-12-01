@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\bruno\\Documents\\codes.briven\\dotneterp\\erp\\erp.csproj",
-        "projectName": "erp",
+        "projectName": "ERP.API",
         "projectPath": "C:\\Users\\bruno\\Documents\\codes.briven\\dotneterp\\erp\\erp.csproj",
         "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\bruno\\Documents\\codes.briven\\dotneterp\\erp\\obj\\",

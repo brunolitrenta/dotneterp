@@ -1,6 +1,5 @@
-using erp.Models.Context;
-using erp.Services;
-using Microsoft.EntityFrameworkCore;
+using ERP.APPLICATION.Services;
+using ERP.INFRASTRUCTURE;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,9 +12,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IProductService, ProductService>();
 
-builder.Services.AddDbContext<ErpDBContext>(opt =>
-    opt.UseNpgsql(builder.Configuration.GetConnectionString("PostgresDb"))
-);
+builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 

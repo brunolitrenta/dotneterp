@@ -1,8 +1,9 @@
-namespace erp.Models.Entities;
+using ERP.DOMAIN.Entities.Base;
 
-public class Product
+namespace ERP.DOMAIN.Entities;
+
+public class Product : EntityBase
 {
-    public Guid Id { get; set; }
     public string Name { get; set; } = "";
     public string Description { get; set; } = "";
     public int Amount { get; set; }

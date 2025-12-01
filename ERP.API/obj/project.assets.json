@@ -905,6 +905,46 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "ERP.APPLICATION/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "ERP.DOMAIN": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ERP.APPLICATION.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ERP.APPLICATION.dll": {}
+        }
+      },
+      "ERP.DOMAIN/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/ERP.DOMAIN.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ERP.DOMAIN.dll": {}
+        }
+      },
+      "ERP.INFRASTRUCTURE/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "ERP.APPLICATION": "1.0.0",
+          "ERP.DOMAIN": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "8.0.22",
+          "Npgsql": "8.0.8",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.11"
+        },
+        "compile": {
+          "bin/placeholder/ERP.INFRASTRUCTURE.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ERP.INFRASTRUCTURE.dll": {}
+        }
       }
     }
   },
@@ -2535,10 +2575,27 @@
         "system.threading.channels.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "ERP.APPLICATION/1.0.0": {
+      "type": "project",
+      "path": "../ERP.APPLICATION/ERP.APPLICATION.csproj",
+      "msbuildProject": "../ERP.APPLICATION/ERP.APPLICATION.csproj"
+    },
+    "ERP.DOMAIN/1.0.0": {
+      "type": "project",
+      "path": "../ERP.DOMAIN/ERP.DOMAIN.csproj",
+      "msbuildProject": "../ERP.DOMAIN/ERP.DOMAIN.csproj"
+    },
+    "ERP.INFRASTRUCTURE/1.0.0": {
+      "type": "project",
+      "path": "../ERP.INFRASTRUCTURE/ERP.INFRASTRUCTURE.csproj",
+      "msbuildProject": "../ERP.INFRASTRUCTURE/ERP.INFRASTRUCTURE.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "ERP.APPLICATION >= 1.0.0",
+      "ERP.INFRASTRUCTURE >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.22",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.22",
       "Npgsql >= 8.0.8",
@@ -2552,11 +2609,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bruno\\Documents\\codes.briven\\dotneterp\\erp\\erp.csproj",
-      "projectName": "erp",
-      "projectPath": "C:\\Users\\bruno\\Documents\\codes.briven\\dotneterp\\erp\\erp.csproj",
+      "projectUniqueName": "C:\\Users\\bruno\\Documents\\codes.briven\\dotneterp\\ERP.API\\ERP.API.csproj",
+      "projectName": "ERP.API",
+      "projectPath": "C:\\Users\\bruno\\Documents\\codes.briven\\dotneterp\\ERP.API\\ERP.API.csproj",
       "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bruno\\Documents\\codes.briven\\dotneterp\\erp\\obj\\",
+      "outputPath": "C:\\Users\\bruno\\Documents\\codes.briven\\dotneterp\\ERP.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bruno\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -2570,7 +2627,14 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\bruno\\Documents\\codes.briven\\dotneterp\\ERP.APPLICATION\\ERP.APPLICATION.csproj": {
+              "projectPath": "C:\\Users\\bruno\\Documents\\codes.briven\\dotneterp\\ERP.APPLICATION\\ERP.APPLICATION.csproj"
+            },
+            "C:\\Users\\bruno\\Documents\\codes.briven\\dotneterp\\ERP.INFRASTRUCTURE\\ERP.INFRASTRUCTURE.csproj": {
+              "projectPath": "C:\\Users\\bruno\\Documents\\codes.briven\\dotneterp\\ERP.INFRASTRUCTURE\\ERP.INFRASTRUCTURE.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

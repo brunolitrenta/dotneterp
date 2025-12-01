@@ -1,7 +1,7 @@
-using erp.Models.Entities;
+using ERP.DOMAIN.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace erp.Models.Context;
+namespace ERP.INFRASTRUCTURE.Persistence;
 
 public class ErpDBContext : DbContext
 {

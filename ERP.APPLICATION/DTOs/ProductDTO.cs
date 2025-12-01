@@ -1,6 +1,6 @@
-using erp.Models.Entities;
+using ERP.DOMAIN.Entities;
 
-namespace erp.Models.DTOs;
+namespace ERP.APPLICATION.DTOs;
 
 public class CreateProductDTO
 {

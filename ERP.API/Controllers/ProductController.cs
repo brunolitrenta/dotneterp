@@ -1,11 +1,9 @@
-using erp.Models;
-using erp.Models.DTOs;
-using erp.Models.Entities;
-using erp.Services;
+using ERP.APPLICATION.DTOs;
+using ERP.APPLICATION.Services;
+using ERP.DOMAIN.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace erp.Controllers;
+namespace ERP.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -13,7 +11,7 @@ public class ProductController(IProductService _service) : ControllerBase
 {
     
     [HttpGet]
-    public async Task<ActionResult<List<Product>>> GetProducts([FromQuery] int offset = 0, [FromQuery] int limit = 10)
+    public async Task<ActionResult<List<Product>>> GetProducts([FromQuery] int? offset, [FromQuery] int? limit)
     {
         return Ok(await _service.GetProducts(offset, limit));
     }

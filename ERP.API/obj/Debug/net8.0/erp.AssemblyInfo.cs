@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("erp")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("ERP.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43683708b91f1e34ac9c24aa5835c1ea064bdb51")]
-[assembly: System.Reflection.AssemblyProductAttribute("erp")]
-[assembly: System.Reflection.AssemblyTitleAttribute("erp")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d829035fe0b6a46f87a702b4b5dd42e9fd63641d")]
+[assembly: System.Reflection.AssemblyProductAttribute("ERP.API")]
+[assembly: System.Reflection.AssemblyTitleAttribute("ERP.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.
