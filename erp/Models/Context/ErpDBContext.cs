@@ -1,3 +1,4 @@
+using erp.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace erp.Models.Context;

@@ -1,20 +1,37 @@
 using erp.Models;
 using erp.Models.Context;
+using erp.Models.DTOs;
+using erp.Models.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace erp.Services;
 
-public class ProductService
+public interface IProductService
 {
-  protected readonly ErpDBContext _context;
+  Task<List<Product>> GetProducts(int offset, int limit);
+  Task<Product> GetProductById(Guid id);
+  Task<Product> CreateProduct(CreateProductDTO product);
+}
+public class ProductService(ErpDBContext _context) : IProductService
+{
   
-  public ProductService(ErpDBContext context)
+  public async Task<List<Product>> GetProducts(int offset, int limit)
   {
-    _context = context;
+    return await _context.Products.Skip(offset).Take(limit).ToListAsync();
   }
-  
-  public async Task<List<Product>> GetProducts()
+
+  public async Task<Product> GetProductById(Guid id)
   {
-    return await _context.Products.ToListAsync();
+    var product = await _context.Products.FindAsync(id) ?? throw new Exception("Produto não encontrado");
+
+    return product;
+  }
+
+  public async Task<Product> CreateProduct(CreateProductDTO product)
+  {
+    var result = await _context.Products.AddAsync(product.ToEntity());
+    await _context.SaveChangesAsync();
+    return result.Entity;
   }
 }
