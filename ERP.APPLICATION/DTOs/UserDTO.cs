@@ -1,12 +1,13 @@
+using ERP.APPLICATION.Interfaces.Services;
 using ERP.DOMAIN.Entities;
 
 namespace ERP.APPLICATION.DTOs;
 
-public class CreateUserDTO
+public class CreateUserDTO(IHasher hasher)
 {
-    public string Name { get; set; }
-    public string Email { get; set; }
-    public string Password { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string Email { get; set; }  = string.Empty;
+    public string Password { get; set; } = string.Empty;
 
 
     public User ToEntity()
@@ -15,7 +16,7 @@ public class CreateUserDTO
         {
             Name = this.Name,
             Email = this.Email,
-            Password = this.Password,
+            Password = hasher.HashPassword(this.Password),
             CreatedAt = DateTime.UtcNow,
             UpdatedAt = DateTime.UtcNow
         };
